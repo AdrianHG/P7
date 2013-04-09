@@ -375,3 +375,26 @@ Served asset /application.js - 304 Not Modified (106ms)
 
 Started GET "/assets/rails.png" for 10.0.2.2 at 2013-04-09 15:12:16 +0100
 Served asset /rails.png - 304 Not Modified (32ms)
+
+
+Started GET "/static_pages/home" for 10.0.2.2 at 2013-04-09 15:26:53 +0100
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 516ms
+
+ActionView::Template::Error (Missing partial layouts/shim with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/adrian/dsi/rails_projects/p7/app/views"
+):
+    5:     <%= stylesheet_link_tag    "application", media: "all" %>
+    6:     <%= javascript_include_tag "application" %>
+    7:     <%= csrf_meta_tags %>
+    8:     <%= render 'layouts/shim' %>    
+    9:   </head>
+    10:   <body>
+    11:     <%= render 'layouts/header' %>
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__723522779_86768000'
+
+
+  Rendered /home/adrian/.rvm/gems/ruby-1.9.3-p385/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.2ms)
+  Rendered /home/adrian/.rvm/gems/ruby-1.9.3-p385/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+  Rendered /home/adrian/.rvm/gems/ruby-1.9.3-p385/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (50.3ms)
